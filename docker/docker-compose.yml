@@ -1,0 +1,18 @@
+version: "3.3"
+services:
+  postgres:
+    hostname: postgres
+    image: postgres:latest
+    container_name: 'postgresspaghetti'
+    environment:
+          - POSTGRES_USER=spaghetti
+          - POSTGRES_PASSWORD=spaghetti
+          - POSTGRES_DB=postgres
+    ports:
+        - "127.0.0.1:8006:5432"
+#    volumes:
+#      - ./postgres/postgres-data:/var/lib/postgresql/data
+
+networks:
+  default:
+    external: false
